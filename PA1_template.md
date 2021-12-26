@@ -86,7 +86,7 @@ ggplot(daily.steps, aes(x=dailySteps))+
 ## Warning: Removed 8 rows containing non-finite values (stat_bin).
 ```
 
-![](PA1_template_files/figure-html/daily step with NAs-1.png)<!-- -->
+![](PA1_template_files/figure-html/daily_step_with_NAs-1.png)<!-- -->
 
 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -118,7 +118,7 @@ ggplot(interval.steps, aes(x = interval, y = intervalSteps))+
   labs(title = "Interval Steps", x = "Interval", y = "Steps")
 ```
 
-![](PA1_template_files/figure-html/activity pattern-1.png)<!-- -->
+![](PA1_template_files/figure-html/activity_pattern-1.png)<!-- -->
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -174,7 +174,7 @@ ggplot(new.daily.steps, aes(x = newDailySteps)) +
   geom_histogram(binwidth = 1000)
 ```
 
-![](PA1_template_files/figure-html/daily step without NAs-1.png)<!-- -->
+![](PA1_template_files/figure-html/daily_step_without_NAs-1.png)<!-- -->
 
 ```r
 new.daily.steps %>% 
@@ -242,5 +242,5 @@ ggplot(daily_steps_week, aes(x = interval, y = steps, color = weektype))+
   facet_wrap(~weektype, ncol = 1, nrow = 2)
 ```
 
-![](PA1_template_files/figure-html/activity pattern by weektype-1.png)<!-- -->
+![](PA1_template_files/figure-html/activity_pattern_by_weektype-1.png)<!-- -->
 

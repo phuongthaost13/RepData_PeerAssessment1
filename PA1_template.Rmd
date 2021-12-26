@@ -40,7 +40,7 @@ head(daily.steps)
 ```
 
 2. Make a histogram of the total number of steps taken each day
-```{r daily step with NAs}
+```{r daily_step_with_NAs}
 ggplot(daily.steps, aes(x=dailySteps))+
   geom_histogram(binwidth = 1000)+
   labs(title = "Daily Steps (without NAs removed)",
@@ -59,7 +59,7 @@ daily.steps %>%
 ## What is the average daily activity pattern?
 
 1. Make a time series plot (i.e. \color{red}{\verb|type = "l"|}type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-```{r activity pattern}
+```{r activity_pattern}
 interval.steps <- dt %>% 
   group_by(interval) %>% 
   summarise(intervalSteps = round(mean(steps, na.rm = TRUE)))
@@ -97,7 +97,7 @@ write.csv(dt,"data/NAImpute_Activity.csv", row.names = FALSE, quote = FALSE)
 ```
 
 4. Make a histogram of the total number of steps taken each day and Calculate and report the **mean** and **median** total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
-```{r daily step without NAs}
+```{r daily_step_without_NAs}
 noNAdt <- read.csv("data/NAImpute_Activity.csv")
 
 new.daily.steps <- noNAdt %>% 
@@ -135,7 +135,7 @@ head(day.of.week)
 ```
 
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
-```{r activity pattern by weektype}
+```{r activity_pattern_by_weektype}
 daily_steps_week <- day.of.week %>% 
   group_by(interval, weektype) %>% 
   summarise(steps = round(mean(steps)))
